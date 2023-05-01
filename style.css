@@ -1,0 +1,147 @@
+:root {
+  --pri-purple: hsl(259, 100%, 65%);
+  --pri-lightred: hsl(0, 100%, 67%);
+
+  --white: hsl(0, 0%, 100%);
+  --offwhite: hsl(0, 0%, 94%);
+  --lightgrey: hsl(0, 0%, 86%);
+  --smokeygrey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--lightgrey);
+  font-family: "Poppins", sans-serif;
+}
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  min-height: max-content;
+  min-width: 768px;
+  background-color: var(--white);
+  padding: 3.5rem;
+
+  border-radius: 1rem 1rem 8rem 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.input_fields {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .input_fields {
+    flex-direction: column;
+  }
+}
+
+.day,
+.month,
+.year {
+  width: 145px;
+  margin-inline-end: 2rem;
+}
+
+input {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 0.4rem;
+  outline: none;
+  border: var(--lightgrey) 1px solid;
+  padding: 0.5rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+button {
+  outline: none;
+  border: 0;
+}
+.label {
+  text-transform: uppercase;
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-block-end: 0.5rem;
+}
+
+.submit {
+  width: 100%;
+  position: relative;
+  margin-block-start: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.submit:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+
+  top: 50%;
+  background-color: var(--lightgrey);
+}
+.submit button {
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  position: relative;
+
+  background-image: url(assets/images/icon-arrow.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: var(--pri-purple);
+
+  transition: background-color ease-in-out 300ms;
+}
+.submit button:hover {
+  background-color: black;
+}
+input:focus {
+  border: var(--pri-purple) 1px solid;
+}
+input::placeholder {
+  color: var(--lightgrey);
+}
+
+.display {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.display span {
+  color: var(--pri-purple);
+}
+
+.err_msg {
+  margin-block-start: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: red;
+}
+
+.display span {
+  min-width: calc(1rem + 10%);
+  display: inline-block;
+  text-align: right;
+}
